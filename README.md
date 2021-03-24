@@ -3,5 +3,9 @@
 <b>👥 Minimal and fast contact list</b>
 </div>
 
-![](rsc/head.png)
+<br>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/migueravila/Renrakusen/main/rsc/header.png">
+</p>
 
