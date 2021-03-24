@@ -11,6 +11,18 @@
 
 ### Usage
 
+First you have to compile the program using the next command:
+
+```sh
+gcc main.c -o renra
+```
+
+And now you can run the program using:
+
+```sh
+./renra
+```
+
 ### Contributors
 
 *Data Structure* project , made by **Miguel R. Ávila**, **Mario Chan**, **Jorge Reyes**, **Israel Cruz Morales** y **Joel Ivan Ruiz Blanco**
