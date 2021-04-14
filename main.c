@@ -150,10 +150,10 @@ void menu(NodePointer *head, char *name, char *phone)
       printf("    ║ CREATE NEW CONTACT ║\n");
       printf("    ╚════════════════════╝\033[0m\n\n");
 
-      printf("    Number: ");
+      printf("    Name: ");
       scanf("%s", name);
 
-      printf("    Name: ");
+      printf("    Number: ");
       scanf("%s", phone);
 
       insertNode(name, phone, head);
@@ -164,7 +164,7 @@ void menu(NodePointer *head, char *name, char *phone)
       printf("\n\n    \033[36m╔════════════════╗\n");
       printf("    ║ DELETE CONTACT ║\n");
       printf("    ╚════════════════╝\033[0m\n\n");
-      printf("    Name or Number: ");
+      printf("    Name: ");
       scanf("%s", name);
       deleteNode(name, head);
       break;
