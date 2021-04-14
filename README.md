@@ -6,7 +6,7 @@
 <br>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/migueravila/Renrakusen/main/rsc/header.png">
+  <img src="https://raw.githubusercontent.com/migueravila/Renrakusen/main/assets/header.png">
 </p>
 
 ### Usage
@@ -25,4 +25,4 @@ And now you can run the program using:
 
 ### Contributors
 
-*Data Structure* project , made by **Miguel R. Ávila**, **Mario Chan**, **Jorge Reyes**, **Israel Cruz Morales** y **Joel Ivan Ruiz Blanco**
+_Data Structure_ project , made by **Miguel R. Ávila**, **Mario Chan**, **Jorge Reyes**, **Israel Cruz Morales** y **Joel Ivan Ruiz Blanco**.

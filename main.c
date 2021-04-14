@@ -1,7 +1,6 @@
-//  ___                   _
-// | _ \___ _ _  _ _ __ _| |___  _ ___ ___ _ _
-// |   / -_) ' \| '_/ _` | / / || (_-</ -_) ' \ 
-// |_|_\___|_||_|_| \__,_|_\_\\_,_/__/\___|_||_|
+// ┬─┐┌─┐┌┐┌┬─┐┌─┐┬┌─┬ ┬┌─┐┌─┐┌┐┌
+// ├┬┘├┤ │││├┬┘├─┤├┴┐│ │└─┐├┤ │││
+// ┴└─└─┘┘└┘┴└─┴ ┴┴ ┴└─┘└─┘└─┘┘└┘
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -69,7 +68,7 @@ void displayList(NodePointer current)
 {
   if (NULL == current)
   {
-    printf("\n    \033[31mLa lista esta vacia!\033[0m\n\n");
+    printf("\n    \033[31mNo contacts added!\033[0m\n\n");
     return;
   }
   while (current->next != NULL)
@@ -90,7 +89,7 @@ void deleteNode(char nameV[], NodePointer *head3)
 
   if (NULL == current)
   {
-    printf("\n    \033[31mLa lista esta vacia!\033[0m\n\n");
+    printf("\n    \033[31mNo contacts added!\033[0m\n\n");
     return;
   }
 
@@ -98,7 +97,7 @@ void deleteNode(char nameV[], NodePointer *head3)
   {
     tempNode = current;
     *head3 = current->next;
-    printf("\n    \033[31m-> Eliminando \"%s\" . . .\n\n\033[0m", tempNode->name);
+    printf("\n    \033[31m-> Removed \"%s\" . . .\n\n\033[0m", tempNode->name);
     free(tempNode);
   }
   else
@@ -112,12 +111,12 @@ void deleteNode(char nameV[], NodePointer *head3)
     {
       tempNode = current;
       previous->next = current->next;
-      printf("\n    \033[31m-> Eliminando \"%s\" . . .\n\n\033[0m", tempNode->name);
+      printf("\n    \033[31m-> Removed \"%s\" . . .\n\n\033[0m", tempNode->name);
       free(tempNode);
     }
     else
     {
-      printf("\n    \033[31mNo se encuentra \"%s\" . . .\n\n\033[0m", nameV);
+      printf("\n    \033[31mNo such contact \"%s\" . . .\n\n\033[0m", nameV);
     }
   }
 }
@@ -140,44 +139,44 @@ void menu(NodePointer *head, char *name, char *phone)
       break;
     case 1:
       printf("\e[1;1H\e[2J");
-      printf("\n\n    \033[36m╔════════════════════╗\n");
-      printf("    ║ LISTA DE CONTACTOS ║\n");
-      printf("    ╚════════════════════╝\033[0m\n\n");
+      printf("\n\n    \033[36m╔══════════════════╗\n");
+      printf("    ║ LIST OF CONTACTS ║\n");
+      printf("    ╚══════════════════╝\033[0m\n\n");
       displayList(*head);
       break;
     case 2:
       printf("\e[1;1H\e[2J");
-      printf("\n\n    \033[36m╔══════════════════════╗\n");
-      printf("    ║ CREAR NUEVO CONTACTO ║\n");
-      printf("    ╚══════════════════════╝\033[0m\n\n");
+      printf("\n\n    \033[36m╔════════════════════╗\n");
+      printf("    ║ CREATE NEW CONTACT ║\n");
+      printf("    ╚════════════════════╝\033[0m\n\n");
 
-      printf("    Nombre: ");
+      printf("    Number: ");
       scanf("%s", name);
 
-      printf("    Número: ");
+      printf("    Name: ");
       scanf("%s", phone);
 
       insertNode(name, phone, head);
-      printf("    \033[33m-> CONTACTO AÑADIDO\033[0m\n\n");
+      printf("    \033[33m-> Added contact\033[0m\n\n");
       break;
     case 3:
       printf("\e[1;1H\e[2J");
-      printf("\n\n    \033[36m╔═══════════════════╗\n");
-      printf("    ║ ELIMINAR CONTACTO ║\n");
-      printf("    ╚═══════════════════╝\033[0m\n\n");
-      printf("    Nombre: ");
+      printf("\n\n    \033[36m╔════════════════╗\n");
+      printf("    ║ DELETE CONTACT ║\n");
+      printf("    ╚════════════════╝\033[0m\n\n");
+      printf("    Name or Number: ");
       scanf("%s", name);
       deleteNode(name, head);
       break;
     default:
       printf("\e[1;1H\e[2J");
-      printf("\n\n    \033[31m╔═══════════════════════════════╗\n");
-      printf("    ║ INTRODUCE UNA OPCIÓN CORRECTA ║\n");
-      printf("    ╚═══════════════════════════════╝\033[0m\n\n");
+      printf("\n\n    \033[31m╔════════════════════════╗\n");
+      printf("    ║ ENTER A CORRECT OPTION ║\n");
+      printf("    ╚════════════════════════╝\033[0m\n\n");
       break;
     }
 
-    printf(" \033[33m 1. \033[0m Ver Contactos \033[33m 2. \033[0m Crear Contacto \033[33m 3. \033[0m Borrar Contacto \033[33m 0. \033[0m Salir del menu\n");
+    printf(" \033[33m 1. \033[0m List Contacts \033[33m 2. \033[0m Create Contact \033[33m 3. \033[0m Delete Contact \033[33m 0. \033[0m Exit\n");
     printf(" \033[35m > \033[0m");
     scanf("%d", &flag);
 
